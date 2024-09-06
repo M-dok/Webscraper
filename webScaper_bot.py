@@ -36,11 +36,19 @@ class WebBot:
         # Disables the search engine choice screen, which prevents the browser from displaying the search engine setup page after installation.
         self.chrome_options.add_argument("--disable-search-engine-choice-screen")
 
+        #Starts the browser window in max
         self.chrome_options.add_argument("--start-maximized")
+
         # Allows the ChromeDriver to continue running after the script finishes, keeping the browser open for manual inspection or debugging.
         self.chrome_options.add_experimental_option("detach", True)
+
+        # "excludeSwitches": ["enable-automation"] - Prevents the "Chrome is being controlled by automated test software" banner from being displayed.
         self.chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+
+        #"useAutomationExtension": False - Disables the use of the Chrome automation extension, which can make the browser more easily detectable as being automated.
         self.chrome_options.add_experimental_option('useAutomationExtension', False)
+
+
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
         self.chrome_options.add_argument(f"user-agent={user_agent}")
 
@@ -50,6 +58,7 @@ class WebBot:
     
         # Initialize WebDriver
         proxy = random.choice(self.proxies)
+        
         self.browser = webdriver.Chrome(options=self.chrome_options,seleniumwire_options={'enable_har': True,
                                                                                           'disable_encoding': True,     
                                                                                           'connection_timeout': None,
