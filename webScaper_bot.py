@@ -272,6 +272,8 @@ class WebBot:
             print("Error quitting browser:", e)
 
     
+    #Used to examine HAR file (Not in use)
+    #Debugging purpose only
     def har_data(self):
         har_data = self.browser.har  # This contains all HTTP transactions
         
