@@ -111,7 +111,7 @@ class WebBot:
     def login(self):#Presses login button
         try:
             login_button = WebDriverWait(self.browser, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "/html/body/app-root/app-password-login/div/div/app-login-form/div/div[1]/div/div[2]/form/p/app-basic-button/button"))
+                EC.element_to_be_clickable((By.XPATH, "XPATH of element"))
             )
             login_button.click()
         except Exception as e:
@@ -152,7 +152,7 @@ class WebBot:
             
             time.sleep(random.uniform(3,10))
             nav = WebDriverWait(self.browser,15).until(
-                EC.element_to_be_clickable((By.XPATH,'//*[@id="main-container"]/div/app-home/app-home-feed/div/div[2]/div[3]/div[2]/div/div'))
+                EC.element_to_be_clickable((By.XPATH,'XPATH of element'))
             )#finds the link 
             self.action.move_to_element(nav).click().perform()
             time.sleep(random.uniform(5,10))
