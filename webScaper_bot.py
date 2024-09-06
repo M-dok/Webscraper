@@ -14,9 +14,9 @@ import random
 class WebBot:
     def __init__(self, url, email, password):
         # Class Attributes
-        self._url = url #The url for the website
-        self._email = email#email for login 
-        self._password = password#password for login
+        self._url = url             #The url for the website
+        self._email = email         #email for login 
+        self._password = password   #password for login
         self.proxies = ["List of proxy IPs to avoid automation detection"]
 
         self._page = 1 #page number that program is currently on 
@@ -54,7 +54,6 @@ class WebBot:
 
         # Set Accept-Language and Referer
         self.chrome_options.add_argument("accept-language=en-US,en;q=0.9")
-        #self.chrome_options.add_argument("--auto-open-devtools-for-tabs")
     
         # Initialize WebDriver
         proxy = random.choice(self.proxies)
