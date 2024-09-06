@@ -175,7 +175,7 @@ class WebBot:
             print("'Load More' button not found:", e)
             input("program failed") #Pauses program for debugging purposes 
 
-        except (NoSuchElementException, TimeoutException) as e:
+        except (NoSuchElementException, TimeoutException,ElementNotInteractableException) as e:
             print("End of Content")
             self.close_browser()
     
