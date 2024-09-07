@@ -245,7 +245,7 @@ class WebBot:
                 # creating a csv writer object
                 writer  = csv.DictWriter(csvfile,fieldnames=fields)
                 # writing the fields
-                if csvfile.tell() == 0:
+                if csvfile.tell() == 0: # if the file is empty write the fields 
                     writer.writeheader()
                 # writing the data rows
                 writer.writerows(rows)
